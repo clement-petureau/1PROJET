@@ -4,7 +4,7 @@ import sys
 pygame.init()
 
 # Dimensions de la fenêtre
-screen_width = 1000  # Increased width to accommodate buttons
+screen_width = 1000  
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Katarenga")
@@ -26,13 +26,13 @@ RedCase = pygame.image.load(r"C:\Users\rayha\.vscode\Projet Final\Plateau\Image\
 YellowCase = pygame.image.load(r"C:\Users\rayha\.vscode\Projet Final\Plateau\Image\Yellow.png")
 GreenCase = pygame.image.load(r"C:\Users\rayha\.vscode\Projet Final\Plateau\Image\Green.png")
 
-# Redimensionner les images 
+# Dimensions des images
 BlueCase = pygame.transform.scale(BlueCase, (75, 75))
 RedCase = pygame.transform.scale(RedCase, (75, 75))
 YellowCase = pygame.transform.scale(YellowCase, (75, 75))
 GreenCase = pygame.transform.scale(GreenCase, (75, 75))
 
-# Patterns for each quadrant
+# Les paternes de chaque quadrant pris du sujet
 quadrant1 = [
     "BYGR",
     "GYRY",
@@ -61,7 +61,7 @@ quadrant4 = [
     "BGYR"
 ]
 
-# Function to get the correct image based on the character
+# Pour avoir la bonne image dans chaque case
 def get_case_image(char):
     if char == 'B':
         return BlueCase
@@ -74,7 +74,7 @@ def get_case_image(char):
     else:
         return None
 
-# Function to draw a button
+# Pour afficher les boutons
 def draw_button(screen, text, x, y, width, height, inactive_color, active_color, font):
     mouse = pygame.mouse.get_pos()
     if x + width > mouse[0] > x and y + height > mouse[1] > y:
@@ -132,3 +132,4 @@ while running:
 
 pygame.quit()
 sys.exit()
+
